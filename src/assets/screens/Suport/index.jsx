@@ -3,8 +3,8 @@ import { useRef } from "react";
 import AnimatedCircle from "../../../components/AnimatedCircle";
 import logo from "../../images/logo.png";
 import { TeamViewerButton, AnyDeskButton } from "../../../components/DownloadButtons";
-import StaffCarousel from "../../../components/Carrossel";
-import staffData from "../../../components/Staff";
+// import StaffCarousel from "../../../components/Carrossel";
+// import staffData from "../../../components/Staff";
 
 const BlobsLayer = styled.div`
   position: absolute;
@@ -27,6 +27,7 @@ const BackGround = styled.div`
 `;
 
 const Card = styled.div`
+  margin: auto;         
   position: relative;
   z-index: 1;
   isolation: isolate;
@@ -44,6 +45,7 @@ const Card = styled.div`
     6px 10px 18px rgba(0, 0, 0, 0.35),
     inset 0 0 120px rgba(0, 0, 0, 0.55);
 `;
+
 
 const TeamCard = styled.div`
   position: relative;
@@ -147,40 +149,40 @@ const KomodusText = styled.h1`
 `;
 
 export default function Suport() {
-    const containerRef = useRef(null);
+  const containerRef = useRef(null);
 
-    return (
-        <BackGround ref={containerRef}>
-            <BlobsLayer>
-                <AnimatedCircle containerRef={containerRef} size={500} speed={300} intensity={0.5} palette="yellow" />
-                <AnimatedCircle containerRef={containerRef} size={400} speed={300} intensity={1} palette="red" />
-                <AnimatedCircle containerRef={containerRef} size={300} speed={300} intensity={1} palette="mix" />
-                <AnimatedCircle containerRef={containerRef} size={300} speed={150} intensity={1} palette="mix" />
-                <AnimatedCircle containerRef={containerRef} size={250} speed={300} intensity={1} palette="yellow" />
-                <AnimatedCircle containerRef={containerRef} size={200} speed={100} intensity={1.2} palette="red" />
-            </BlobsLayer>
+  return (
+    <BackGround ref={containerRef}>
+      <BlobsLayer>
+        <AnimatedCircle containerRef={containerRef} size={500} speed={300} intensity={0.5} palette="yellow" />
+        <AnimatedCircle containerRef={containerRef} size={400} speed={300} intensity={1} palette="red" />
+        <AnimatedCircle containerRef={containerRef} size={300} speed={300} intensity={1} palette="mix" />
+        <AnimatedCircle containerRef={containerRef} size={300} speed={150} intensity={1} palette="mix" />
+        <AnimatedCircle containerRef={containerRef} size={250} speed={300} intensity={1} palette="yellow" />
+        <AnimatedCircle containerRef={containerRef} size={200} speed={100} intensity={1.2} palette="red" />
+      </BlobsLayer>
 
-            <Card>
-                <div style={{ display: "flex", alignItems: "center", flexDirection: "column", gap: "12px", marginBottom: "1.2rem" }}>
-                    <img src={logo} alt="Logo" style={{ maxWidth: 120 }} />
-                    <div style={{ position: "relative" }}>
-                        <KomodusBadge>
-                            <KomodusText>KOMODUS</KomodusText>
-                        </KomodusBadge>
-                        <Aura />
-                    </div>
-                </div>
+      <Card>
+        <div style={{ display: "flex", alignItems: "center", flexDirection: "column", gap: "12px", marginBottom: "1.2rem" }}>
+          <img src={logo} alt="Logo" style={{ maxWidth: 120 }} />
+          <div style={{ position: "relative" }}>
+            <KomodusBadge>
+              <KomodusText>KOMODUS</KomodusText>
+            </KomodusBadge>
+            <Aura />
+          </div>
+        </div>
 
-                <div style={{ maxWidth: 420, margin: "0 auto", padding: 16 }}>
-                    <TeamViewerButton style={{ marginBottom: 12 }} />
-                    <AnyDeskButton />
-                </div>
-            </Card>
+        <div style={{ maxWidth: 420, margin: "0 auto", padding: 16 }}>
+          <TeamViewerButton style={{ marginBottom: 12 }} />
+          <AnyDeskButton />
+        </div>
+      </Card>
 
-            <TeamCard>
-                <TeamTitle>Equipe</TeamTitle>
-                <StaffCarousel items={staffData} />
-            </TeamCard>
-        </BackGround>
-    );
+      {/* <TeamCard> */}
+      {/* <TeamTitle>Equipe</TeamTitle> */}
+      {/* <StaffCarousel items={staffData} /> */}
+      {/* </TeamCard> */}
+    </BackGround>
+  );
 }
